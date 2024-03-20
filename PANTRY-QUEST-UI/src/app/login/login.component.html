@@ -1,4 +1,12 @@
-<p>login works!</p>
+<div id="first">
+    <img src="../../assets/images/unt_sys.png" alt="UNT logo" />
+</div>
 
-
-<button type="button" (click)="loginSubmit(true)">login</button>
+<div class="login-box">
+    <h2>Login</h2>
+    <form>
+        <input type="text" name="userid" placeholder="User ID" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login" (click)="loginSubmit(true)">
+    </form>
+</div>

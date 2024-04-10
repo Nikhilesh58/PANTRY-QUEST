@@ -1,1 +1,24 @@
-<p>feedback works!</p>
+<div class="container">
+    <h1>Give Your Valuable Feedback</h1>
+
+    <!-- Dropdown container -->
+    <div class="dropdown" (click)="toggleDropdown()">
+        <!-- Dropdown button -->
+        <button class="dropbtn">{{ selectedCategory ? selectedCategory : 'Select Item' }}</button>
+        <!-- Dropdown content (hidden by default) -->
+        <div class="dropdown-content" [class.show]="dropdownOpen">
+            <!-- Checkbox labels inside the dropdown -->
+            <label *ngFor="let category of categories">
+                <input type="radio" name="category" [value]="category" (change)="selectCategory(category)">
+                {{ category }}
+            </label>
+        </div>
+    </div>
+
+    <!-- Text input for feedback -->
+    <textarea id="feedbackInput" placeholder="Enter your feedback..." [(ngModel)]="feedback" required></textarea>
+    <div *ngIf="feedbackInvalid" class="error-message">Feedback is required.</div>
+    <star-rating class="stars" [starType]="'svg'" [rating]="0"></star-rating>
+    <br>
+    <button class="submitfb">Submit</button>
+</div>

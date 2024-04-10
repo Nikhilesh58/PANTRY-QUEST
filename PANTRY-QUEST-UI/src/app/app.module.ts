@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { FormsModule } from '@angular/forms';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    StarRatingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -181,14 +181,14 @@ body {
 }
 
 /* Show the ingredient dropdown when hovering over the image */
-.single-menu img:hover+.ingredients-dropdown,
+.single-menu img:hover+.ingredients-dropdown,        
 .ingredients-dropdown:hover {
-    display: block;
+    display: block;    
 }
 
-/* Hide the ingredient dropdown by default */
+/* Hide the ingredient dropdown by default */   
 .ingredients-dropdown {
-    display: none;
+    display: none;    
 }
 
 .menu-details {
@@ -197,7 +197,7 @@ body {
 }
 
 .menu-content {
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
 }
 
 .availability button {

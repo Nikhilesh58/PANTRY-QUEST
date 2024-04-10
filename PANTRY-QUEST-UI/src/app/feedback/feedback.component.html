@@ -41,9 +41,9 @@
             var categoryRadios = dropdown.querySelectorAll('input[type="radio"]');
 
             categoryRadios.forEach(function (radio) {
-                radio.addEventListener('change', function () {
-                    var selectedCategory = this.value;
-                    var feedbackInput = document.getElementById('feedbackInput');
+                radio.addEventListener('change', function () { 
+                    var selectedCategory = this.value; 
+                    var feedbackInput = document.getElementById('feedbackInput'); 
                     feedbackInput.setAttribute('data-category', selectedCategory);
                 });
             });

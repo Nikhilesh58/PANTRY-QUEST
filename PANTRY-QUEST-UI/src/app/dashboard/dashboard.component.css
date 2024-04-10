@@ -13,8 +13,8 @@
 }
 
 body {
-    font-family: 'poppins', sans-serif;
-    font-size: 16px;
+    font-family: 'poppins', sans-serif;    
+    font-size: 16px;   
     line-height: 22px;
     color: #222    
 }
@@ -36,7 +36,7 @@ body {
 .heading {
     display: inline-block;
     text-align: center;
-    color: white;
+    color: white;    
     padding-top: 42px;
     padding-left: 32%;
 }
@@ -87,7 +87,7 @@ body {
 
 /* Dropdown button */
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #4CAF50;    
     color: white;
     padding: 12px;
     font-size: 16px;
@@ -112,7 +112,7 @@ body {
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {     
     display: block;
 }
 

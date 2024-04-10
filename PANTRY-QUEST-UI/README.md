@@ -1,4 +1,8 @@
-# PANTRYQUESTUI
+# Project Description:
+
+FOR students and faculty WHO picks food items from pantry every week. THE Pantry Quest is a web application THAT provides the ability for students and faculty to get required items online before they runout and pickup at their convenience. UNLIKE current manually gathering items at a certain time of week, OUR PRODUCT provides features like Item details like count, types, rating. Pickup timings, packaging and Notification system which notify when desired product is available and Community engagement where can chat about food items with likeminded people.
+
+## PANTRYQUESTUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 

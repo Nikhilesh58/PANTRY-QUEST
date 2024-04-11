@@ -10,6 +10,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FormsModule } from '@angular/forms';
 import { StarRatingModule } from 'angular-star-rating';
+import { CartComponent } from './cart/cart.component';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -18,15 +22,21 @@ import { StarRatingModule } from 'angular-star-rating';
     DashboardComponent,
     NavbarComponent,
     LayoutComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    provideAnimations(), // required animations providers
+    provideToastr({ positionClass: 'toast-bottom-right'})
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,12 +8,12 @@
         <!-- Dropdown content (hidden by default) -->
         <div class="dropdown-content" [class.show]="dropdownOpen">
             <!-- Checkbox labels inside the dropdown -->
-            <label *ngFor="let category of categories">
+            <label *ngFor="let category of categories">   
                 <input type="radio" name="category" [value]="category" (change)="selectCategory(category)">
                 {{ category }}
             </label>
         </div>
-    </div>
+    </div>    
 
     <!-- Text input for feedback -->
     <textarea id="feedbackInput" placeholder="Enter your feedback..." [(ngModel)]="feedback" required></textarea>

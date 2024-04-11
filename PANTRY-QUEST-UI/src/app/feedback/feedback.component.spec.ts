@@ -12,7 +12,7 @@ describe('FeedbackComponent', () => {
     });
     fixture = TestBed.createComponent(FeedbackComponent);
     component = fixture.componentInstance; 
-    fixture.detectChanges();
+    fixture.detectChanges(); 
   });
  
   it('should create', () => {

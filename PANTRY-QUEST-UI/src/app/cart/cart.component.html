@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="cart-container">
+        <div class="cart-items">
+            <div *ngFor="let item of cartItems" class="item">
+                <img [src]="item.image" alt="{{ item.name }}">
+                <div class="item-details">
+                    <div class="item-name">{{ item.name }}</div>
+                    <div class="item-quantity">Quantity: {{ item.quantity }}</div>
+                    <div class="item-actions">
+                        <button style="background-color: #4CAF50; color: white;" (click)="removeItem(item)">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pickup-container" *ngIf="cartItems.length > 0">
+        <h2>Pickup Details</h2>
+        <div class="datetime-slots">
+            <div *ngFor="let slot of availableTimeSlots" class="slot" [class.available]="slot.availability > 0"
+                [class.unavailable]="slot.availability === 0">
+                <span>{{ slot.date | date:'shortDate' }}</span>
+                <span>{{ slot.time }}</span>
+                <span style="color: #4CAF50;" *ngIf="slot.availability > 0">Available</span>
+                <span style="color: red;" *ngIf="slot.availability == 0 ">Not Available</span>
+                <button [disabled]="slot.availability === 0" (click)="reserveSlot(slot)" data-toggle="modal" data-target="#confirmationModal">Reserve Now</button>
+            </div>
+        </div>
+
+        <!-- <div class="checkout">
+            <button style="font-size: large;" (click)="placeOrder()" id="placeOrderBtn">Place Order</button>
+        </div> -->
+    </div>
+    <div *ngIf="cartItems.length == 0">
+        <h1 style="text-align: center; margin-top: 10%;">Cart is Empty</h1>
+
+    </div>
+</div>
+
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to reserve this slot?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" 
+                    data-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.item img {
+    width: 100px;   
+    height: 100px;
+    margin-right: 20px;
+}
+
+.checkout button,
+.slot button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout button:hover,
+.slot button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    max-width: 90%;
+    margin-top: 2%;
+}
+
+.removebtn {
+    max-width: 90%;
+    margin-top: 2%;
+}
+
+.datetime-slots {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slot {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.slot span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.slot button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

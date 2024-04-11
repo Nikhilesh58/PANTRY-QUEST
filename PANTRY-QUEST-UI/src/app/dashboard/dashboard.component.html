@@ -1,294 +1,66 @@
-<div class="topbar">
-
-    <div class="logo">
-        <img src="../../assets/images/logo/logo.jpg" alt="">
-    </div>
-    <div class="heading">
-        <h1>Welcome to UNT pantry</h1>
-    </div>
-
-</div>
 <div class="main">
     <div class="section-title">
+        <p>For many students, college isn’t just endless meal plans, late-night study sessions, and newfound freedom.
+            Over 30% of college students are food insecure, 56% of food-insecure students are working, 75% of
+            food-insecure students receive financial aid through their institutions, and 43% have a meal plan (College &
+            University Food Bank Alliance). Indeed, food insecurity cuts across all demographic statuses, enrollment
+            levels, and geographic locations. These stressors
+            affect student success, impact learning, grades, and time to earn degrees. By addressing food insecurity, we
+            also address educational needs.</p>
         <h2>Menu</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, modi?</p>
     </div>
 
     <div class="main2">
-        <div class="dropdown">
-            <button class="dropbtn">Category</button>
-            <div class="dropdown-content">
-                <label><input type="checkbox" value="Option 1"> Veg</label>
-                <label><input type="checkbox" value="Option 2"> Non-Veg</label>
-                <label><input type="checkbox" value="Option 3"> Milk Products</label>
+        <div class="dropdown" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
+            <button class="dropbtn">SELECT CATEGORY</button>
+            <div class="dropdown-content" *ngIf="isDropdownVisible">
+                <label *ngFor="let category of categories">
+                    <input type="checkbox" [value]="category.value" (change)="onCategorySelect($event)"
+                        [checked]="selectedCategories.includes(category.value)"> {{ category.label }}
+                </label>
             </div>
         </div>
-        <div class="cart">
-            <button class="dropbtn">Cart</button>
+        <div class="availability">
+            <button style="font-size: 20px; margin-right: 30px;" [disabled]="maxReached" (click)="addToCart()">Add to Cart</button> {{maxReached}}
         </div>
     </div>
-
-    <div class="return">
-        <button class="dropbtn">return</button>
-    </div>
-
+    <br>
     <div class="menus">
-        <div class="menu-column">
-            <h4>Section 1</h4>
-            <h4> Select any two items in the list</h4>
-            <div class="single-menu">
-                <img src="../../assets/images/apples.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Ingredient 1</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p></p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
+        <div class="menu-column" *ngFor="let section of filteredMenuSections">
+            <h5 style="text-align: center;">{{ section.title }} ( *{{ section.description }} )</h5>
+            <br>
+            <div *ngIf="countSelectedItems(section) > section.selectionLimit">
+                <h6 style="color: red;">* Please select only {{ section.selectionLimit }} items from {{ section.title
+                    }}.</h6>
             </div>
-
-            <div class="single-menu">
-                <img src="../../assets/images/blackbeans.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Ingredient 1</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
+            <br>
+            <div class="single-menu" *ngFor="let item of section.items">
+                <div>
+                    <img [src]="item.image" alt="">
+                    <div class="ingredients-dropdown">
+                        <ul>
+                            <li *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>
+                        </ul>
                     </div>
+                    <div class="menu-details">
+                        <div class="menu-content">
+                            <h6>{{ item.name }}</h6>
+                            <p>{{ item.calories }}</p>
+                            <p>Type: {{ item.type }}</p>
+                            <p>Exp: {{ item.exp }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
                     <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/cabbage.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-column">
-            <h4>Section 2</h4>
-            <h4>Select any 1 item</h4>
-            <div class="single-menu">
-                <img src="../../assets/images/porkbeans.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/tuna.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/eggs.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-column">
-            <h4>Section 3</h4>
-            <h4>Select any 2 item</h4>
-            <div class="single-menu">
-                <img src="../../assets/images/porkbeans.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/tuna.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/eggs.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-column">
-            <h4>Section 4</h4>
-            <h4>Select any 1 item</h4>
-            <div class="single-menu">
-                <img src="../../assets/images/porkbeans.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/tuna.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
-                    </div>
-                </div>
-            </div>
-            <div class="single-menu">
-                <img src="../../assets/images/eggs.jpg" alt="">
-                <div class="ingredients-dropdown">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
-                    </ul>
-                </div>
-                <div class="menu-details">
-                    <div class="menu-content">
-                        <h5>Food Title</h5>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="availability">
-                        <button>Available: 10</button>
-                        <input type="number" placeholder="Quantity">
+                        <h5 style="color: #3e8e41;">Available: {{ item.availability }}</h5>
+                        <button style="margin-left :30px ;" (click)="decrementQuantity(item)">-</button>
+                        <input type="number" style="width: 55px;" [(ngModel)]="item.quantity" min="0">
+                        <button (click)="incrementQuantity(item)">+</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

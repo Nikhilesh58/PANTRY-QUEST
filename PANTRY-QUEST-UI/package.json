@@ -20,6 +20,8 @@
     "@angular/router": "^16.1.0",
     "@fortawesome/fontawesome-free": "^6.5.2",
     "angular-star-rating": "^7.0.0",
+    "ngx-animate": "^1.0.1",
+    "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

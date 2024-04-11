@@ -19,6 +19,5 @@
     <textarea id="feedbackInput" placeholder="Enter your feedback..." [(ngModel)]="feedback" required></textarea>
     <div *ngIf="feedbackInvalid" class="error-message">Feedback is required.</div>
     <star-rating class="stars" [starType]="'svg'" [rating]="0"></star-rating>
-    <br>
-    <button class="submitfb">Submit</button>
+    <button class="submitfb mt-2">Submit</button>
 </div>

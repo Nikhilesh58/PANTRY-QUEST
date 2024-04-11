@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
           calories: '125 calories',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 7,
           ingredients: ['Apples'],
           quantity: 0
         },
@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
           calories: '90 calories',
           type: 'Non-Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 11,
           ingredients: ['Light Tuna', 'Water', 'Vegetable Broth', 'Salt'],
           quantity: 0
         },
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
           calories: '150 calories',
           type: 'Milk Products',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 26,
           ingredients: ['Milk', 'Vitamin D3'],
           quantity: 0
         }
@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
           calories: '130 calories',
           type: 'Non-Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 33,
           ingredients: ['Prepared White Beans', 'Water', 'Tomato Puree', 'Sugar', 'Distilled Vinegar'],
           quantity: 0
         },
@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
           calories: '110 calories',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 67,
           ingredients: ['Prepared Black Beans', 'Water', 'Salt', 'Calcium Chloride (Added to Promote Firmness)'],
           quantity: 0
         },
@@ -99,7 +99,7 @@ export class DashboardComponent implements OnInit {
           calories: '120 calories',
           type: 'Milk Products',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 58,
           ingredients: ['Skim Milk', 'Vitamin A Palmitate', 'Vitamin D3'],
           quantity: 0
         }
@@ -116,7 +116,7 @@ export class DashboardComponent implements OnInit {
           calories: '80 calories',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 89,
           ingredients: ['Avocado'],
           quantity: 0
         },
@@ -126,7 +126,7 @@ export class DashboardComponent implements OnInit {
           calories: '20 calories',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 39,
           ingredients: ['Romaine Lettuce', 'Red Cabbage', 'Carrot'],
           quantity: 0
         },
@@ -136,7 +136,7 @@ export class DashboardComponent implements OnInit {
           calories: '25 calories per cup',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 27,
           ingredients: ['Cabbage'],
           quantity: 0
         },
@@ -146,7 +146,7 @@ export class DashboardComponent implements OnInit {
           calories: '70 calories per serving',
           type: 'Non-Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 49,
           ingredients: ['Large Egg'],
           quantity: 0
         }
@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit {
           calories: '195 calories',
           type: 'Non-Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 82,
           ingredients: ['Chicken', 'Celery', 'Mayonnaise', 'Salad Dressing'],
           quantity: 0
         },
@@ -173,7 +173,7 @@ export class DashboardComponent implements OnInit {
           calories: '80 calories',
           type: 'Veg',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 87,
           ingredients: ['Corn', 'Water', 'Sugar', 'Salt'],
           quantity: 0
         },
@@ -183,7 +183,7 @@ export class DashboardComponent implements OnInit {
           calories: '120 calories',
           type: 'Milk Products',
           exp: '05-31-2024',
-          availability: 10,
+          availability: 44,
           ingredients: ['Skim Milk', 'Vitamin A Palmitate', 'Vitamin D3'],
           quantity: 0
         }

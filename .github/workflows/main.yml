@@ -47,7 +47,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'PantruQuest'
+          app-name: 'pantryquest'
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3AF63F6392064125AED5B0A1A76D013C }}

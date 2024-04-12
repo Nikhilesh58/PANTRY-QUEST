@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-feedback',
@@ -10,8 +12,12 @@ export class FeedbackComponent {
   feedback: string = '';
   feedbackInvalid: boolean = false;
   dropdownOpen: boolean = false;
+  rating = 0;
 
   categories: string[] = ['Eggs', 'Chicken', 'Milk', 'Pork Beans'];
+
+  constructor(private router: Router, private toastr: ToastrService) {
+  }
 
   selectCategory(category: string) {
     this.selectedCategory = category;
@@ -34,5 +40,7 @@ export class FeedbackComponent {
     this.feedback = '';
     this.selectedCategory = '';
     this.feedbackInvalid = false;
+    this.rating = 0.1;
+    this.toastr.success('Feedback submitted successfully!', 'Success');
   }
 }

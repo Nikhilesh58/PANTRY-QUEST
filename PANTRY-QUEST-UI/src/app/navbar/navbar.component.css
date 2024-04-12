@@ -73,6 +73,7 @@
 .nav-link {
     text-decoration: none;
     color: white;
+    cursor: pointer;
     font-weight: bold;
 }
 

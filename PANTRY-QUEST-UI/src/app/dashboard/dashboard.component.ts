@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
           quantity: 0
         },
         {
-          image: '../../assets/images/wholemilk.webp',
+          image: '../../assets/images/wholemilk.jpg',
           name: 'Whole Milk',
           calories: '150 calories',
           type: 'Milk Products',
@@ -94,7 +94,7 @@ export class DashboardComponent implements OnInit {
           quantity: 0
         },
         {
-          image: '../../assets/images/reducedfatmilk.webp',
+          image: '../../assets/images/reducedfatmilk.jpg',
           name: '2% Reduced Fat Milk',
           calories: '120 calories',
           type: 'Milk Products',
@@ -178,7 +178,7 @@ export class DashboardComponent implements OnInit {
           quantity: 0
         },
         {
-          image: '../../assets/images/reducedfatmilk.webp',
+          image: '../../assets/images/reducedfatmilk.jpg',
           name: '2% Reduced Fat Milk',
           calories: '120 calories',
           type: 'Milk Products',

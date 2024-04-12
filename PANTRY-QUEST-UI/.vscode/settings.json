@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f17f33c2-80fd-49c7-9535-3d154c8d61cd/resourceGroups/Pantry_Quest/providers/Microsoft.Web/sites/pantryquest",
+    "appService.deploySubpath": "dist\\pantry-quest-ui"
+}

@@ -35,10 +35,10 @@
             </div>
             <br>   
             <div class="single-menu" *ngFor="let item of section.items">
-                <div>
+                <div>  
                     <img [src]="item.image" alt="">
                     <div class="ingredients-dropdown">
-                        <ul>
+                        <ul>  
                             <li *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>
                         </ul>   
                     </div>

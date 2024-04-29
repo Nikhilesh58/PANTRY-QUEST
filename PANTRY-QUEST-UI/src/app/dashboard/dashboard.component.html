@@ -33,14 +33,14 @@
                 <h6 style="color: red;">* Please select only {{ section.selectionLimit }} items from {{ section.title
                     }}.</h6>
             </div>
-            <br>
+            <br>   
             <div class="single-menu" *ngFor="let item of section.items">
                 <div>
                     <img [src]="item.image" alt="">
                     <div class="ingredients-dropdown">
                         <ul>
                             <li *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>
-                        </ul>
+                        </ul>   
                     </div>
                     <div class="menu-details">
                         <div class="menu-content">
@@ -49,7 +49,7 @@
                             <p>Type: {{ item.type }}</p>
                             <p>Exp: {{ item.exp }}</p>
                         </div>
-                    </div>
+                    </div>   
                 </div>
                 <div>
                     <div class="availability">
